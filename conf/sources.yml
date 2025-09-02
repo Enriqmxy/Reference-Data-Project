@@ -1,0 +1,62 @@
+# Symbols to load into the raw tables.
+# instrument_id is YOUR canonical ID (what will become instrument_id in core_*).
+# Each vendor key maps to what that vendor expects.
+instruments:
+  # US large caps
+  - instrument_id: AAPL
+    yahoo: AAPL
+    stooq: aapl.us
+    alphavantage: AAPL
+  - instrument_id: MSFT
+    yahoo: MSFT
+    stooq: msft.us
+    alphavantage: MSFT
+
+  # ETFs (equity index, bonds, gold) to vary asset classes
+  - instrument_id: SPY
+    yahoo: SPY
+    stooq: spy.us
+    alphavantage: SPY
+  - instrument_id: TLT       # US 20+Y Treasury bond ETF
+    yahoo: TLT
+    stooq: tlt.us
+    alphavantage: TLT
+  - instrument_id: BND       # US aggregate bond ETF
+    yahoo: BND
+    stooq: bnd.us
+    alphavantage: BND
+  - instrument_id: GLD       # Gold ETF (commodity proxy)
+    yahoo: GLD
+    stooq: gld.us
+    alphavantage: GLD
+
+  # Dual-listing / ADR examples
+  - instrument_id: TM        # Toyota ADR (NYSE) – US, so AV works
+    yahoo: TM
+    stooq: tm.us
+    alphavantage: TM
+  - instrument_id: 7203.T    # Toyota on TSE – JP ticker, no AV, no Stooq
+    yahoo: 7203.T
+
+  - instrument_id: HSBC      # HSBC ADR (NYSE)
+    yahoo: HSBC
+    stooq: hsbc.us
+    alphavantage: HSBC
+  - instrument_id: 0005.HK   # HSBC on HKEX – HK ticker, no AV, no Stooq
+    yahoo: 0005.HK
+
+  - instrument_id: BABA      # Alibaba ADR (NYSE)
+    yahoo: BABA
+    stooq: baba.us
+    alphavantage: BABA
+  - instrument_id: 9988.HK   # Alibaba on HKEX
+    yahoo: 9988.HK
+
+# Source preference (used later in core merge logic)
+source_priority:
+  - alphavantage
+  - stooq
+  - yahoo
+
+# Lookback window (years) for Yahoo; Alpha Vantage pulls "full"
+lookback_years: 2
