@@ -1,0 +1,14 @@
+## Getting Started
+1. Clone the repository:
+	```bash
+	git clone https://github.com/Enriqmxy/Reference-Data-Project.git
+	cd Reference-Data-Project
+2. Create and activate a virtual environment:
+   	python -m venv .venv
+   	.venv\Scripts\activate   # On Windows
+   	source .venv/bin/activate # On Mac/Linux
+3. Install dependencies:
+	pip install -r requirements.txt
+4. Run pipeline: 
+	python run_ingest.py
+	python run_build_core.py
